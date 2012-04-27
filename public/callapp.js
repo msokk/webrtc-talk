@@ -73,6 +73,15 @@ var CallMap = function() {
   });
 
   this.getLocation();
+  navigator.getUserMedia_ = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+  navigator.getUserMedia_('video', function(stream){
+    var video = document.getElementById("camera");
+    var domURL = window.URL || window.webkitURL;
+    video.src  = domURL.createObjectURL(stream);
+  }, function(error){
+      console.log("Failed to get a stream due to", error);
+  });
 
 };
 io.util.mixin(CallMap, io.EventEmitter);
