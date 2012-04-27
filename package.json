@@ -1,0 +1,23 @@
+{
+  "name": "callapp",
+  "version": "0.0.1",
+  "description": "WebRTC demo with Google Maps and Socket.IO",
+  "keywords": ["webrtc", "googlemaps", "video", "socket.io"],
+  "author": "Mihkel Sokk <mihkel@sokk.ee> (http://mihkel.sokk.ee)",
+  "private": true,
+  "homepage": "http://msokk.github.com/webrtc-talk",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msokk/webrtc-talk.git"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "dependencies": {
+    "express": "3.0.0alpha2",
+    "socket.io": "0.9.x"
+  },
+  "scripts": {
+    "start": "node app"
+  }
+}
