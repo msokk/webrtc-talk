@@ -16,26 +16,6 @@
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVfgrR4wugBOfkF0bN3GEZkdGTVy8GQsc&sensor=true">
     </script>
-    <script type="text/javascript">
-
-      var myOptions = {
-        center: new google.maps.LatLng(59.434754,24.758284),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: [
-          {
-            stylers: [
-              { gamma: 0.5 },
-              { lightness: 15 },
-              { hue: "#00b2ff" },
-              { visibility: "on" }
-            ]
-          }
-        ]
-      };
-      var map = new google.maps.Map(document.getElementById("map_canvas"),
-          myOptions);
-     var socket = io.connect();
-    </script>
+    <script src="/callapp.js"></script>
   </body>
 </html>
