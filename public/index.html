@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Callmap</title>
+    <title>CallMap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
-      #camera { width: 60%; height: 50%; position: fixed; bottom: 5%; right: 0%;}
-    </style>
+    <link rel="stylesheet" media="all" href="/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
   </head>
   <body>
-    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <div id="map_canvas"></div>
+    <div id="statusbar">
+      Status: <span id="status">Not Connected</span>
+      |
+      <span id="user_count">Nobody is here</span>
+    </div>
+    <div id="cameras">
+      <video id="camera" autoplay="autoplay"></video>
+    </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVfgrR4wugBOfkF0bN3GEZkdGTVy8GQsc&sensor=true">
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVfgrR4wugBOfkF0bN3GEZkdGTVy8GQsc&sensor=true">
     </script>
     <script src="/callapp.js"></script>
-    <video id="camera" autoplay="autoplay"></video>
   </body>
 </html>

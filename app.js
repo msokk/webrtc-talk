@@ -11,31 +11,33 @@ app.configure(function() {
 var server = app.listen('4000')
   , io = io.listen(server);
 
-
 io.sockets.on('connection', function(socket) {
 
+  // Notify everybody of the new client
   io.sockets.clients().forEach(function(s) {
     s.get('coordinates', function(err, coords) {
       if(coords != null) {
-        console.log('client connected, sending list');
-        socket.emit('coordinates', s.id, coords);
+        socket.emit('new client', s.id, coords);
       }
     });
   });
 
-
-
-  socket.on('coordinates', function(coords) {
+  // Notify everybody of the new client
+  socket.on('new client', function(coords) {
     socket.set('coordinates', coords, function() {
-      socket.broadcast.emit('coordinates', socket.id, coords);
+      socket.broadcast.emit('new client', socket.id, coords);
     });
-
   });
 
+  //Notify everybody of disconnection
+  socket.on('disconnect', function() {
+    io.sockets.emit('client disconnected', socket.id);
+  });
 
-  socket.on('disconnect', function () {
-    io.sockets.emit('user disconnected', socket.id);
+  //Exchange signals
+  socket.on('signal', function(id, message) {
+    io.sockets.socket(id).emit('signal', socket.id, message);
   });
 });
 
-console.log('Callapp running at port 4000');
+console.log('CallMap running at port 4000');
