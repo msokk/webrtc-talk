@@ -5,72 +5,9 @@
   <head>
     <title>WebRTC</title>
     <meta charset="utf-8">
-    <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Kameron|Muli|Open+Sans:regular,semibold,italic,italicsemibold&amp;v2">
-
-    <style>
-      .title { background-image: url(images/phonebank.jpg); }
-      .title p { color: black; }
-      .title h1 { margin-top: 0; }
-
-      .source {
-        position: absolute;
-        left: 60px;
-        top: 644px;
-        padding-right: 175px;
-        font-size: 12px;
-        letter-spacing: 0;
-        line-height: 18px;
-      }
-      .source a { color: inherit; }
-      video { margin: 10px; }
-
-      button.demo {
-        padding: 6px 12px 6px 12px;
-        text-decoration: none;
-        background-color: #759ae9;
-        background: -webkit-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
-        background: -moz-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
-        background: -ms-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
-        background: -o-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
-        background: linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
-        border-top: 1px solid #1f58cc;
-        border-right: 1px solid #1b4db3;
-        border-bottom: 1px solid #174299;
-        border-left: 1px solid #1b4db3;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
-        border-radius: 4px;
-        -webkit-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
-        -moz-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
-        -ms-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
-        -o-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
-        box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
-        color: #fff;
-        text-shadow: 0 -1px 1px #1a5ad9;
-        font-size: 80%;
-      }
-
-      button.demo:hover {
-        background: -webkit-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
-        background: -moz-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
-        background: -ms-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
-        background: -o-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
-        background: linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
-      }
-
-      button.demo:active {
-        background: -webkit-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
-        background: -moz-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
-        background: -ms-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
-        background: -o-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
-        background: linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
-      }
-
-      article.demo > section { text-align: center; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body style="display: none">
 
@@ -93,27 +30,25 @@
         </h3>
         <ul class="build">
           <li>
-            Use this template to create your presentation
+            Platform for what?
           </li>
           <li>
-            Use the provided color palette, box and arrow graphics, and
-            chart styles
-          </li>
-          <li>
-            Instructions are provided to assist you in using this
-            presentation template effectively
-          </li>
-          <li>
-            At all times strive to maintain Google's corporate look and feel
+            Who is doing?
           </li>
         </ul>
+      </article>
+
+      <article>
+        <h3>Current support</h3>
+        Chrome, Opera, Firefox soon, etc
+        <a href="http://dev.chromium.org/getting-involved/dev-channel">Chrome</a>
       </article>
 
       <article>
         <h3>Accessing your camera</h3>
         <section>
           <pre>
-&lt;video autoplay&gt;&lt;/video&gt;
+&lt;video autoplay controls&gt;&lt;/video&gt;
 &lt;script&gt;
   navigator.getUserMedia('video, audio', function(stream) {
     var video = document.querySelector('video');
@@ -131,7 +66,7 @@
       <article class="demo">
         <h3>Accessing your camera - demo</h3>
         <section>
-          <video id="demovideo" autoplay></video>
+          <video id="demovideo" autoplay controls></video>
           <br>
           <button id="camerademo" class="demo">Show me</button>
         </section>
@@ -143,38 +78,67 @@
 
       <article>
         <h3>More demos</h3>
+        <ul>
+          <li><a href="http://neave.com/webcam/html5/">Neave's HTML5 Webcam Toy</a></li>
+          <li><a href="http://apprtc.appspot.com/html/face.html">Face Detection</a><li>
+          <li><a href="https://apprtc.appspot.com/">AppRTC - 1:1 video calling app</a></li>
+          <li><a href="http://learningthreejs.com/data/live-video-in-webgl/">Live Video in WebGL</a></li>
+        </ul>
+      </article>
+
+      <article class="fill">
+        <h3>CallMap</h3>
+        <iframe src="http://sokk.ee:4000"></iframe>
       </article>
 
       <article>
-        <h3>CallMap</h3>
+        <h1>Thanks!</h1>
         <section>
-          <video id="demovideo" autoplay></video>
-          <br>
-          <button id="camerademo" class="demo">Show me</button>
+          Read more at <a href="http://www.webrtc.org/">webrtc.org</a>
         </section>
       </article>
     </section>
 
 
-  <script>
-  //normalize window.URL
-  window.URL || (window.URL = window.webkitURL || window.msURL || window.oURL);
+    <script src="http://html5slides.googlecode.com/svn/trunk/slides.js"></script>
+    <script>
+      // normalize window.URL
+      window.URL || (window.URL = window.webkitURL || window.msURL || window.oURL);
 
-  //normalize navigator.getUserMedia
-  navigator.getUserMedia || (navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
-    // Camera demo
-    var btn = document.querySelector('#camerademo');
-    btn.addEventListener('click', function() {
-      navigator.getUserMedia('video', function(stream) {
+      /**
+       * Camera demo
+       *
+       * gotStream - called when user grants access to camera
+       * noStream - called when error occurs or user denies the access of camera
+       */
+      var gotStream = function(stream) {
+        // See http://code.google.com/p/chromium/issues/detail?id=91136
+        if(window.location.protocol.match('file')) {
+          alert('createObjectURL does not work on the local filesystem in Chrome!');
+          return;
+        }
+
         var video = document.querySelector('#demovideo');
         video.src = window.URL.createObjectURL(stream);
+      };
 
-      }, function(error) {
+      var noStream = function(error) {
         // We failed - user denied or there is no camera
         console.log("Failed to get a stream due to", error);
-      });
-    }, false);
-  </script>
+      };
+
+      var btn = document.querySelector('#camerademo');
+      btn.addEventListener('click', function() {
+
+        // Opera has up to date implementation
+        if (navigator.getUserMedia) {
+          navigator.getUserMedia({video: true}, gotStream, noStream);
+        } else {
+          navigator.webkitGetUserMedia('video', gotStream, noStream);
+        }
+
+      }, false);
+    </script>
   </body>
 </html>

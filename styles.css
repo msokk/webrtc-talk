@@ -1,0 +1,61 @@
+.title { background-image: url(images/phonebank.jpg); }
+.title p { color: black; }
+.title h1 { margin-top: 0; }
+
+.source {
+  position: absolute;
+  left: 60px;
+  top: 644px;
+  padding-right: 175px;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+.source a, .source a:visited { color: inherit; }
+video { margin: 10px; border: solid 1px gray; }
+
+button.demo {
+  padding: 6px 12px 6px 12px;
+  text-decoration: none;
+  background-color: #759ae9;
+  background: -webkit-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
+  background: -moz-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
+  background: -ms-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
+  background: -o-linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
+  background: linear-gradient(top, #759ae9 0%, #376fe0 50%, #242424 50%, #2463de 100%);
+  border-top: 1px solid #1f58cc;
+  border-right: 1px solid #1b4db3;
+  border-bottom: 1px solid #174299;
+  border-left: 1px solid #1b4db3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  -moz-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  -ms-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  -o-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  color: #fff;
+  text-shadow: 0 -1px 1px #1a5ad9;
+  font-size: 80%;
+}
+
+button.demo:hover {
+  background: -webkit-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background: -moz-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background: -ms-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background: -o-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background: linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+}
+
+button.demo:active {
+  background: -webkit-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
+  background: -moz-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
+  background: -ms-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
+  background: -o-linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
+  background: linear-gradient(top, #242424 0%, #2463de 50%, #759ae9 50%, #376fe0 100%);
+}
+
+article.demo > section { text-align: center; }
