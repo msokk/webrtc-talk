@@ -14,7 +14,7 @@
     <section class="slides layout-regular">
 
       <article class="title">
-        <h1>WebRTC</h1>
+        <h1 class="icon big">WebRTC</h1>
         <p>
           Mihkel Sokk
           <br>
@@ -24,24 +24,16 @@
           <a href="http://www.flickr.com/photos/ironrodart/4155664186/sizes/l/in/photostream/">http://www.flickr.com/photos/ironrodart/4155664186/sizes/l/in/photostream/</a>
         </div>
       </article>
-      <article>
 
-        <h3>WebRTC is:
-        </h3>
+      <article>
+        <h3>WebRTC</h3>
         <ul class="build">
-          <li>
-            Platform for what?
-          </li>
-          <li>
-            Who is doing?
-          </li>
+          <li>Real-time video, voice and peer-to-peer connections</li>
+          <li>Exposed through simple Javascript APIs</li>
+          <li>getUserMedia & PeerConnection</li>
+          <li>Supported by Google, Mozilla and Opera</li>
+          <li>We can now make a Skypezilla!</li>
         </ul>
-      </article>
-
-      <article>
-        <h3>Current support</h3>
-        Chrome, Opera, Firefox soon, etc
-        <a href="http://dev.chromium.org/getting-involved/dev-channel">Chrome</a>
       </article>
 
       <article>
@@ -51,25 +43,67 @@
 &lt;video autoplay controls&gt;&lt;/video&gt;
 &lt;script&gt;
   navigator.getUserMedia('video, audio', function(stream) {
+
     var video = document.querySelector('video');
     video.src = window.URL.createObjectURL(stream);
 
   }, function(error) {
+
     // We failed - user denied or there is no camera
     console.log("Failed to get a stream due to", error);
+
   });
 &lt;/script&gt;
           </pre>
         </section>
       </article>
 
-      <article class="demo">
-        <h3>Accessing your camera - demo</h3>
+      <article class="centered">
+        <h3>Accessing your camera - example</h3>
         <section>
           <video id="demovideo" autoplay controls></video>
           <br>
-          <button id="camerademo" class="demo">Show me</button>
+          <button id="camerademo" class="demo">Give me video</button>
         </section>
+      </article>
+
+      <article class="centered">
+        <h3>What's behind?</h3>
+        <section>
+          <img src="images/architecture.png">
+        </section>
+      </article>
+
+      <article>
+        <h3>PeerConnection</h3>
+          <ul>
+            <li>Allows two browsers to communicate directly</li>
+            <li>Coordinated via signalling channel - AJAX or WebSockets</li>
+            <li>Accepts video/audio streams from getUserMedia</li>
+          </ul>
+      </article>
+
+      <article>
+        <h3>Current browser support</h3>
+        <ul>
+          <li>
+            <a href="http://dev.chromium.org/getting-involved/dev-channel">Chrome 20
+            </a> - Developer and Canary builds
+          </li>
+          <li>
+            <a href="http://www.opera.com/browser/next/">Opera 12</a> - even in mobile version!, but has no P2P
+          </li>
+          <li>Firefox - <a href="http://hacks.mozilla.org/2012/04/webrtc-efforts-underway-at-mozilla/">coming soon</a></li>
+          <li>Internet Explorer - <a href="http://html5labs.com/prototypes/media-capture-api-(2nd-updated)/media-capture-api-(2nd-update)/documentation#_Toc319695225">Media Capture Prototype</a></li>
+      </article>
+
+      <article>
+        <h3>Things to come (in this summer or year)</h3>
+        <ul>
+          <li>Data API - P2P for everything</li>
+          <li>Different resolution support</li>
+          <li>JSEP P2P session control (signaling)</li>
+        </ul>
       </article>
 
       <article class="fill">
@@ -77,12 +111,13 @@
       </article>
 
       <article>
-        <h3>More demos</h3>
+        <h3>More cool demos</h3>
         <ul>
           <li><a href="http://neave.com/webcam/html5/">Neave's HTML5 Webcam Toy</a></li>
           <li><a href="http://apprtc.appspot.com/html/face.html">Face Detection</a><li>
           <li><a href="https://apprtc.appspot.com/">AppRTC - 1:1 video calling app</a></li>
           <li><a href="http://learningthreejs.com/data/live-video-in-webgl/">Live Video in WebGL</a></li>
+          <li><a href="http://www.soundstep.com/blog/experiments/jsdetection/">Play Xylophone with your hands</a></li>
         </ul>
       </article>
 
