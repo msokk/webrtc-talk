@@ -28,11 +28,12 @@
       <article>
         <h3>WebRTC</h3>
         <ul class="build">
-          <li>Real-time video, voice and peer-to-peer connections</li>
+          <li>High quality real-time video/voice and P2P connections in the browser</li>
+          <li>Plugin-free</li>
           <li>Exposed through simple Javascript APIs</li>
           <li>getUserMedia & PeerConnection</li>
           <li>Supported by Google, Mozilla and Opera</li>
-          <li>We can now make a Skypezilla!</li>
+          <li>Skypezilla!</li>
         </ul>
       </article>
 
@@ -81,6 +82,33 @@
             <li>Coordinated via signalling channel - AJAX or WebSockets</li>
             <li>Accepts video/audio streams from getUserMedia</li>
           </ul>
+      </article>
+
+        <article>
+        <h3>PeerConnection - Example</h3>
+        <section>
+          <pre>
+function onMessageReceived(message) { // AJAX or WebSocket callback
+  // receiving side processes the message
+  pc.processSignalingMessage(message);
+}
+
+var pc = new PeerConnection('STUN example.com:8000', function(message) {
+  // send signaling message to the other side via AJAX or WebSockets
+});
+pc.onaddstream = function(e) {
+  remoteVideo.src = window.URL.createObjectURL(e.stream);
+};
+
+pc.onremovestream = function(e) {
+  remoteVideo.src = '';
+};
+
+navigator.getUserMedia('video,audio', function(localStream) {
+  localVideo.src = window.URL.createObjectURL(stream);
+  pc.addStream(localStream); // Start sending video.
+}, function(e) { ... });</pre>
+        </section>
       </article>
 
       <article>
