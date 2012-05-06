@@ -9,31 +9,39 @@ body {
 
 #map_canvas { width: 100%; height: 100% }
 
-#cameras {
+div.info {
+  width: 60px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 3px;
+  text-align: center;
+}
+
+.camera {
   position: fixed;
   bottom: 0;
-  right: 0;
-  width: 100%;
-}
-
-#cameras video {
-  float: left;
-}
-
-#camera {
   width: 17%;
   height: 20%;
 
-  float: right !important;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   border: solid 1px gray;
 }
 
-#camera.big {
-  width: 42.5%;
+.camera.big {
+  width: 40%;
   height: 50%;
+}
+
+.camera#local {
+  right: 0;
+}
+
+.camera#remote {
+
 }
 
 #statusbar {

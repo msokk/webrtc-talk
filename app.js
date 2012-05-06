@@ -12,6 +12,7 @@ var server = app.listen('4000')
   , io = io.listen(server);
 
 io.sockets.on('connection', function(socket) {
+  io.sockets.emit('total', io.sockets.clients().length);
 
   // Notify everybody of the new client
   io.sockets.clients().forEach(function(s) {
@@ -32,6 +33,7 @@ io.sockets.on('connection', function(socket) {
   //Notify everybody of disconnection
   socket.on('disconnect', function() {
     io.sockets.emit('client disconnected', socket.id);
+    io.sockets.emit('total', io.sockets.clients().length - 1);
   });
 
   //Exchange signals
