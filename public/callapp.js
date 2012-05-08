@@ -30,7 +30,7 @@ var CallMap = function() {
   });
 
   socket.on('signal', function(id, message) {
-    that.call(id);
+    that.call(id, 'answer');
     that.peers[id].processSignalingMessage(message);
   });
 
@@ -162,13 +162,15 @@ CallMap.prototype.initLocalVideo = function() {
   }
 };
 
-CallMap.prototype.call = function(target) {
+CallMap.prototype.call = function(target, respond) {
   var that = this;
   window.webkitPeerConnection = window.webkitPeerConnection || window.webkitDeprecatedPeerConnection;
 
   var pc = this.peers[target] = new webkitPeerConnection(
     "STUN stun.l.google.com:19302", function(message) {
-    that.socket.emit('signal', target, message);
+    if(respond != 'answer') {
+      that.socket.emit('signal', target, message);
+    }
   });
 
   if(this.localStream) {
