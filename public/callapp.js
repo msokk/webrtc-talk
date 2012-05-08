@@ -177,10 +177,9 @@ CallMap.prototype.call = function(target) {
 
   pc.onaddstream = function(event) {
     var url = webkitURL.createObjectURL(event.stream);
-    var video = document.createElement('video');
+    var video = document.getElementById('remote');
     video.autoplay = true;
     video.src = url;
-    $('#cameras').append(video);
   }
 };
 
