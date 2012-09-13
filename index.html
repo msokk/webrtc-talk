@@ -32,7 +32,7 @@
           <li>Plugin-free</li>
           <li>Exposed through simple Javascript APIs</li>
           <li>MediaStreams, PeerConnection API & DataChannel</li>
-          <li>Developed by Google, Mozilla and Opera</li>
+          <li>Developed by Google, Mozilla, Opera and Microsoft</li>
           <li>Skypezilla?</li>
         </ul>
       </article>
@@ -69,7 +69,7 @@
       </article>
 
       <article class="centered">
-        <h3>What's behind?</h3>
+        <h3>The Black Box (ok... green)</h3>
         <section>
           <img src="images/architecture.png">
         </section>
@@ -78,7 +78,7 @@
       <article>
         <h3>PeerConnection</h3>
           <ul>
-            <li>Allows two browsers to communicate directly</li>
+            <li>Allows two browsers to exchange multimedia streams directly</li>
             <li>Coordinated via signalling channel - AJAX or WebSockets</li>
             <li>Accepts video/audio streams from getUserMedia</li>
           </ul>
@@ -87,27 +87,16 @@
         <article>
         <h3>PeerConnection - Example</h3>
         <section>
-          <pre>
-function onMessageReceived(message) { // AJAX or WebSocket callback
-  // receiving side processes the message
-  pc.processSignalingMessage(message);
-}
+          Slide outdated!
+          <br>
+          <a href="http://www.html5rocks.com/en/tutorials/webrtc/basics/">HTML5Rocks article</a>
+        </section>
+      </article>
 
-var pc = new PeerConnection('STUN example.com:8000', function(message) {
-  // send signaling message to the other side via AJAX or WebSockets
-});
-pc.onaddstream = function(e) {
-  remoteVideo.src = window.URL.createObjectURL(e.stream);
-};
-
-pc.onremovestream = function(e) {
-  remoteVideo.src = '';
-};
-
-navigator.getUserMedia('video,audio', function(localStream) {
-  localVideo.src = window.URL.createObjectURL(stream);
-  pc.addStream(localStream); // Start sending video.
-}, function(e) { ... });</pre>
+      <article>
+        <h3>DataChannel</h3>
+        <section>
+          <a href="http://www.youtube.com/watch?v=E8C8ouiXHHk#t=24m35s">DataChannel video</a>
         </section>
       </article>
 
@@ -123,11 +112,6 @@ navigator.getUserMedia('video,audio', function(localStream) {
       </article>
 
       <article>
-        <h3>CallMap</h3>
-
-      </article>
-
-      <article>
         <h3>More cool demos</h3>
         <ul>
           <li><a href="http://neave.com/webcam/html5/">Neave's HTML5 Webcam Toy</a></li>
@@ -136,6 +120,7 @@ navigator.getUserMedia('video,audio', function(localStream) {
           <li>Live Video in WebGL</li>
           <li><a href="http://www.soundstep.com/blog/experiments/jsdetection/">Play Xylophone with your hands</a></li>
           <li><a href="http://html5-demos.appspot.com/static/getusermedia/photobooth.html">CSS Filters photobooth</a></li>
+          <li><a href="http://auduno.github.com/headtrackr/examples/targets.html">WebRTC Headtracking</a></li>
         </ul>
       </article>
 
@@ -143,6 +128,8 @@ navigator.getUserMedia('video,audio', function(localStream) {
         <h1>Thanks!</h1>
         <section>
           Read more at <a href="http://www.webrtc.org/">webrtc.org</a>
+          <br>
+          or watch <a href="http://www.youtube.com/watch?v=E8C8ouiXHHk#t=24m35s">Google I/O 2012 Talk</a>
         </section>
       </article>
     </section>
